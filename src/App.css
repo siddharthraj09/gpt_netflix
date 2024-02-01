@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.glitch {
+  position: absolute;
+  display: inline-block;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.glitch-img {
+  background-image: url('https://external-preview.redd.it/DwoikM0J9C8ZTV2RA5aZVLOd0yrJ49B1JqC03kXZpkI.jpg?auto=webp&s=61ec62412002cebc01c439a38400e743a9223d84'); /* Replace with your image URL */
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.glitch-img::before, .glitch-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://external-preview.redd.it/DwoikM0J9C8ZTV2RA5aZVLOd0yrJ49B1JqC03kXZpkI.jpg?auto=webp&s=61ec62412002cebc01c439a38400e743a9223d84'); /* Same image URL */
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.glitch-img::before {
+  clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%);
+  animation: glitch-anim1 3s infinite linear alternate-reverse;
+}
+
+.glitch-img::after {
+  clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+  animation: glitch-anim2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim1 {
+  0% {
+    transform: translate(2px, 0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(-2px, 0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes glitch-anim2 {
+  0% {
+    transform: translate(-2px, -2px);
   }
-  to {
-    transform: rotate(360deg);
+  20% {
+    transform: translate(2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    transform: translate(2px, 2px);
   }
 }
