@@ -48,14 +48,14 @@ const Header = () => {
   return (
     <div className="absolute top-0 w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between mx-auto">
       <img
-        className="w-44"
+        className="w-36 md:w-44 "
         src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
         alt="logo"
       />
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 text-sm">
           <img
-            className="w-10 m-4"
+            className="w-8 m-4"
             src="https://wallpapers.com/images/hd/netflix-profile-pictures-5yup5hd2i60x7ew3.jpg"
             alt="userIcon"
           />
