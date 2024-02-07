@@ -7,17 +7,17 @@ const VideoBackground = ({ movieId }) => {
   return (
     <div className=" ">
       <iframe
-        className="w-screen md:m-auto aspect-video min-h-96"
+        className="w-screen md:m-auto aspect-video min-h-96 pointer-events-none"
         src={
           "https://www.youtube.com/embed/" +
           trailerVideo?.key +
-          "?autoplay=1&loop=1&mute=1&playlist=" +
+          "?autoplay=1&loop=1&mute=1&controls=0&modestbranding=1&enablejsapi=1 &rel=0&showinfo=0&playlist=" +
           trailerVideo?.key
         }
         title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        frameBorder="0"
-        // allowFullScreen
+        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        // frameBorder="0"
+        allowFullScreen
       ></iframe>
     </div>
   );

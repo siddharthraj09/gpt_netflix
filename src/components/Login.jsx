@@ -25,8 +25,8 @@ const Login = () => {
     setIsSignIn(!isSignIn);
   };
   const handleButtonClick = () => {
-    console.log(email?.current?.value);
-    console.log(password?.current?.value);
+    // console.log(email?.current?.value);
+    // console.log(password?.current?.value);
     const message = checkValidData(
       email?.current?.value,
       password?.current?.value
@@ -62,7 +62,7 @@ const Login = () => {
               // ...
             });
 
-          console.log(user);
+          // console.log(user);
 
           // ...
         })
@@ -82,7 +82,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
+          // console.log(user);
 
           // ...
         })
@@ -101,7 +101,7 @@ const Login = () => {
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute bg-black p-12  max-w-sm  text-white  rounded-lg bg-opacity-80  "
+        className="absolute bg-black p-12 max-w-sm mx-6 text-white  rounded-lg bg-opacity-80  "
       >
         <h1 className="font-bold text-3xl py-6">
           {isSignIn ? "Sign In" : "Sign Up"}

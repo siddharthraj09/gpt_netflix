@@ -7,13 +7,16 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/redux/userSlice";
-
+import { toggleGptSearchView } from "../utils/redux/gptSlice";
 const Header = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const user = useSelector((store) => {
     return store.user;
+  });
+  const gptToggle = useSelector((store) => {
+    return store.gpt?.showGptSearch;
   });
   const handleSignOut = () => {
     signOut(auth)
@@ -45,15 +48,25 @@ const Header = () => {
     });
     return () => unSubscribe();
   }, []);
+
+  const handleGptSearchClick = () => {
+    dispatch(toggleGptSearchView());
+  };
   return (
     <div className="absolute top-0 w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between mx-auto">
       <img
-        className="w-36 md:w-44 "
+        className="w-24 sm:w-44 "
         src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
         alt="logo"
       />
       {user && (
         <div className="flex p-2 text-sm">
+          <button
+            className=" m-2 px-4 text-white  rounded-lg "
+            onClick={handleGptSearchClick}
+          >
+            {gptToggle ? "HOME" : "Search"}
+          </button>
           <img
             className="w-8 m-4"
             src="https://wallpapers.com/images/hd/netflix-profile-pictures-5yup5hd2i60x7ew3.jpg"
