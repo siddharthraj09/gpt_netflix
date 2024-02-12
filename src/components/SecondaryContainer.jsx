@@ -7,7 +7,7 @@ const SecondaryContainer = () => {
   return Object.keys(movies).length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="bg-black w-full">
+    <div className="bg-black w-full sm:py-12">
       <div className="  lg:-mt-52 relative pl-8 z-20">
         <MovieList title={"Now Playing"} movies={movies?.nowPlayingMovies} />
         <MovieList title={"Top Rated"} movies={movies?.nowPopularMovies} />

@@ -1,6 +1,6 @@
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="hover:opacity-100 opacity-0 md:opacity-100 pt-[24%] md:pt-[22%] w-screen aspect-video px-16 absolute  text-white bg-gradient-to-r from-black m-auto ">
+    <div className="hover:opacity-100 opacity-0 md:opacity-100 pt-[24%] md:pt-[22%] w-screen aspect-video px-16 absolute  text-white bg-gradient-to-r from-black m-auto h-full">
       <h1 className="md:text-2xl text-base font-bold">{title}</h1>
       <p className="py-6 text-xs md:text-sm max-w-sm">{overview}</p>
       <div className="">

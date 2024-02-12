@@ -6,6 +6,7 @@ import { lazy, Suspense } from "react";
 const Browse = lazy(() => {
   return import("./Browse");
 });
+
 const Body = () => {
   const appRouter = createBrowserRouter([
     {
