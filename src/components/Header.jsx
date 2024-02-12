@@ -53,10 +53,12 @@ const Header = () => {
     dispatch(toggleGptSearchView());
   };
   return (
-    <div className="absolute top-0 w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between mx-auto">
+    <div className=" absolute top-0 w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between mx-auto">
       <img
         className="w-24 sm:w-44 "
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        // src="../assets/images/46e570ae-8107-49ff-b17b-f43dd3a6093c.png"
+        // src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        img="https://firebasestorage.googleapis.com/v0/b/gptn-5a97f.appspot.com/o/logo.jpg?alt=media&token=d4b3cab6-31d5-4307-a09c-238858e04141"
         alt="logo"
       />
       {user && (

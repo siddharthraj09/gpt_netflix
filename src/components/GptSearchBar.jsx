@@ -34,7 +34,7 @@ const GptSearchBar = () => {
   };
 
   return (
-    <div className="pt-[20%]">
+    <div className="pt-[22%]">
       <form
         action=""
         className=" mx-6 min-w-24 sm:m-auto sm:w-1/2 bg-black bg-opacity-60 rounded-lg flex justify-between"

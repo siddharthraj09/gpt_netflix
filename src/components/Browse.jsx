@@ -18,18 +18,22 @@ const Browse = () => {
   const showGptSearch = useSelector((store) => {
     return store.gpt?.showGptSearch;
   });
-
-  return Object.keys(movieData).length === 0 ? (
-    <Shimmer />
-  ) : (
+  console.log(Object.keys(movieData).length);
+  return (
     <div>
-      <Header></Header>
+      <Header />
       {showGptSearch ? (
         <GptSearch />
       ) : (
         <>
-          <MainContainer />
-          <SecondaryContainer></SecondaryContainer>
+          {movieData?.nowPlayingMovies === null ? (
+            <Shimmer />
+          ) : (
+            <>
+              <MainContainer />
+              <SecondaryContainer />
+            </>
+          )}
         </>
       )}
     </div>
